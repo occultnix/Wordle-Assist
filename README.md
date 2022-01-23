@@ -2,21 +2,19 @@
 
 Wordle Assist is a small program for Wordle players to find the most likely letters to use
 
-# Version
+## Version
 
 Wordle Assist is in pre-alpha v0.01
 
-# Current Limitations / Issues
+## Current Limitations / Issues
 
-## Highest Concerns
-
-- Wordle Assist processes words from a hard-coded array
+### Highest Concerns
+ - Wordle Assist processes words from a hard-coded array
  - Wordle Assist output is difficult to read
  - Wordle Assist does not process non-alphanumeric characters
 
-## Future Concerns
-
-- Wordle Assist runs from the command line with no user interface, making information parsing difficult
+### Future Concerns
+ - Wordle Assist runs from the command line with no user interface, making information parsing difficult
  - Wordle Assist does not provide user with word options based on most likely letters
  - Wordle Assist does not filter intaken words based on unavailable letters
 
