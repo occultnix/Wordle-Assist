@@ -4,10 +4,7 @@ Wordle Assist is a small program for Wordle players to find the most likely lett
 
 ## Version
 
-Wordle Assist is in pre-alpha v0.02.0
-
-## Current Limitations / Issues
-See changelog.md
+Wordle Assist is in pre-alpha v0.03.0
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
