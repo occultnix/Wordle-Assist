@@ -5,17 +5,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
-### Highest Concerns
-- Wordle Assist does not semantically separate single-item lists from multi-item lists.
-- Wordle Assist only processes words from a hard-coded array.
-- Wordle Assist output is difficult to read.
-- Wordle Assist only checks for single letters, not composite sounds or letter combinations.
+### Upcoming Features
+- Digraphs! Wordle Assist will be able to search for things like "qu" and "ck"!
 
 ### Future Concerns
+- Wordle Assist only processes words from a hard-coded array.
 - Wordle Assist runs from the command line with no user interface, hurting user experience.
 - Wordle Assist does not provide user with word options based on most likely letters.
 - Wordle Assist does not filter intaken words based on unavailable letters.
 
+## [0.04.0] - 2022-01-27
+### Added
+- Semantic ouput! Shaved the 's' off anywhere introducing just one thing. It's simpler that way.
+- Further organized output! You can now read ALL letters that appeared 3 times ON ONE LINE!
 
 ## [0.03.0] - 2022-01-25
 ### Added

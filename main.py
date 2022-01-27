@@ -42,26 +42,50 @@ def record_frequency(intake_string_array):
 
 def output_handler(info_raw):
     letters = info_raw.keys()
-    letters_not_present = []
+    current_value = 0
 
-    # Iterate through the raw output.
-    for letter in letters:
-        # Check if the letter has a value attached (excludes 'not_a_letter').
-        if (isinstance(info_raw[letter], int)):
-            # Print a statement if the letter appeared at least once.
-            if (info_raw[letter] > 0):
-                print("The letter " + letter + " appeared " + str(info_raw[letter]) + " times.")
-            # Add all letters that did not appear to the empty list.
-            else:
-                letters_not_present.append(letter)
+    # Create a temporary list and push all letters with current_value to it,
+    #   while also removing them from info_raw. Print a statement with that
+    #   list of letters, increment current_value, and repeat until we've
+    #   checked all letters.
+    while len(info_raw) > 1:
+        templist = []
+        for value in list(letters):
+            if (info_raw[value] == current_value):
+                templist.append(value)
+                info_raw.pop(value)
 
-    # Print the list of letters that did not appear, concatonated as a string.
-    print("The letters " + ", ".join(letters_not_present) + " did not appear.")
+        print(output_intro(templist) + output_outro(current_value))
+        current_value += 1
 
     # Check if there were any non-letters, and if so, concatonate and print.
     if (info_raw['not_a_letter']):
-        print("Characters " + ", ".join(info_raw['not_a_letter']) + " detected.")
+        print("\nNon-letter characters '" +
+          "', '".join(info_raw['not_a_letter']) + "' detected.")
 
+################################################################################
+# OUPUT_INTRO                                                                  #
+# Purpose: prevent "The letterS [one letter] ", and to add 'and' if necessary. #
+################################################################################
+def output_intro(input):
+    if (len(input) > 1):
+        last_item = input[-1]
+        input.pop()
+        string = "The letters " + ", ".join(input) +", and " + last_item
+    else:
+        string = "The letter " + input
+    return string
+
+################################################################################
+# OUTPUT_OUTRO                                                                 #
+# Purpose: prevent "[letters] appeared 1 timeS".                   #
+################################################################################
+def output_outro(value):
+    if (value == 1):
+        string = " appeared 1 time."
+    else:
+        string = " appeared " + str(value) + " times."
+    return string
 
 ################################################################################
 # FUNCTION CALLING                                                             #
